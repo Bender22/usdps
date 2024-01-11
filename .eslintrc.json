@@ -8,7 +8,6 @@
     "no-tabs": "off",
     "space-before-function-paren": "off",
     "no-mixed-spaces-and-tabs": "off",
-    "no-unused-vars": "off",
-    "spaced-comment": "off"
+    "no-unused-vars": "off"
   }
 }

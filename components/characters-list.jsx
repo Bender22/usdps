@@ -1,25 +1,25 @@
-import {Card, CardBody, CardFooter} from "@nextui-org/card";
-import {Image} from "@nextui-org/image";
+import { Card, CardBody, CardFooter } from '@nextui-org/card'
+import { Image } from '@nextui-org/image'
 
-export const CharactersList =  ({items}) => {
-    const {sortElements} = items
-    const classColor = {
-        deathknight: 'bg-red-700',
-        druid: 'bg-amber-400',
-        hunter: 'bg-green-400',
-        mage: 'bg-blue-400',
-        paladin: 'bg-pink-400',
-        priest: 'bg-gray-500',
-        rogue: 'bg-yellow-400',
-        shaman: 'bg-blue-800',
-        warlock: 'bg-purple-400',
-        warrior: 'bg-amber-950'
-    }
-    return (
+export const CharactersList = ({ items }) => {
+  const { sortElements } = items
+  const classColor = {
+    deathknight: 'bg-red-700',
+    druid: 'bg-amber-400',
+    hunter: 'bg-green-400',
+    mage: 'bg-blue-400',
+    paladin: 'bg-pink-400',
+    priest: 'bg-gray-500',
+    rogue: 'bg-yellow-400',
+    shaman: 'bg-blue-800',
+    warlock: 'bg-purple-400',
+    warrior: 'bg-amber-950'
+  }
+  return (
         <>
         { sortElements.map((item, index) => (
                 <div className="gap-2 grid  grid-cols-7 " key={item.name + index}>
-                    <Card shadow="sm" className="col-span-1 my-2">
+                    <Card shadow="sm" className="col-span-3 md:col-span-1 my-2">
                         <CardBody className="overflow-visible p-0 align-bottom">
                             <Image
                                 shadow="sm"
@@ -38,12 +38,12 @@ export const CharactersList =  ({items}) => {
                             <p className="text-default-500">{index + 1}</p>
                         </CardFooter>
                     </Card>
-                    <Card shadow="sm" isPressable className="col-span-6 my-2">
+                    <Card shadow="sm" isPressable className="col-span-4 md:col-span-6 my-2">
                         <CardBody className="overflow-visible p-0">
                             <div className={`absolute col-span-6 justify-self-start ${classColor[item.c]} bg-opacity-25 h-full z-10`}
                                  style={{ width: `${item.v}` }}></div>
                             <div
-                                className="grid grid-cols-12 gap-6 md:gap-4 items-center">
+                                className="flex grid-cols-12 gap-6 md:gap-4 items-center justify-around">
                                 {/* <div className="absolute col-span-2 md:col-span-2"> */}
                                 {/*	<Image */}
                                 {/*		shadow="sm" */}
@@ -55,11 +55,11 @@ export const CharactersList =  ({items}) => {
                                 {/*	/> */}
 
                                 {/* </div> */}
-                                <div className="relative col-span-8 justify-self-end items-end p-16 ms-10">
-                                    <p className="text-5xl ">{item.events[0].ups}</p>
+                                <div className="relative col-span-12 md:col-span-8 justify-center items-center p-16">
+                                    <p className="text-2xl md:text-5xl ">{item.events[0].ups}</p>
                                 </div>
-                                <div className="relative col-span-4 justify-self-end items-end p-16">
-                                    <p className="text-5xl">{item.events[0].porciento}%</p>
+                                <div className="relative col-span-12 md:col-span-4 justify-end items-center me-4">
+                                    <p className="text-2xl md:text-5xl">{item.events[0].porciento}%</p>
                                 </div>
                             </div>
                         </CardBody>
@@ -69,8 +69,7 @@ export const CharactersList =  ({items}) => {
                         {/* </CardFooter> */}
                     </Card>
                 </div>
-            ))}
+        ))}
         </>
-    )
-
+  )
 }
