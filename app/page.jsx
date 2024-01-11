@@ -27,11 +27,11 @@ export default function Home () {
 
   return (
       <>
-        <div className="">
+        <div className="pt-0">
 
-              <Tabs size='md' aria-label="Tabs sizes">
-                    <Tab key="photos" title="Damage"><CharactersList items={{ sortElements: sortElementsDamage }}/></Tab>
-                    <Tab key="music" title="Healing"><CharactersList items={{ sortElements: sortElementsHealing }}/></Tab>
+              <Tabs size='md' aria-label="Tabs sizes" className="mt-0 pt-0">
+                    <Tab key="damage" title="Damage"><CharactersList items={{ sortElements: sortElementsDamage }}/></Tab>
+                    <Tab key="healing" title="Healing"><CharactersList items={{ sortElements: sortElementsHealing }}/></Tab>
 
               </Tabs>
 
