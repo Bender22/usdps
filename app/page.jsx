@@ -8,7 +8,7 @@ export default function Home () {
     return {
       ...e,
       v: e.events[0].porciento * 4 + '%',
-      c: e.class.toLocaleLowerCase()+'.jpg'
+      c: e.class.toLocaleLowerCase()
 
     }
   })
@@ -40,7 +40,7 @@ export default function Home () {
                   width="100%"
                   alt={item.name}
                   className="w-full object-cover h-[140px] z-0"
-                  src={`/images/${item.c}`}
+                  src={`/images/${item.c}.jpg`}
               />
               <div className="absolute bottom-0 left-0 bg-g a z-10 ps-2">
                 <b className="text-gray-500">{item.class}</b>
@@ -53,7 +53,7 @@ export default function Home () {
           </Card>
           <Card shadow="sm" isPressable className="col-span-6 my-2">
             <CardBody className="overflow-visible p-0">
-              <div className={`absolute col-span-6 justify-self-start ${classColor[item.c.split('.')[0]]} bg-opacity-25 h-full z-10`}
+              <div className={`absolute col-span-6 justify-self-start ${classColor[item.c]} bg-opacity-25 h-full z-10`}
                    style={{ width: `${item.v}` }}></div>
               <div
                 className="grid grid-cols-12 gap-6 md:gap-4 items-center">

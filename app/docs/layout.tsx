@@ -4,8 +4,8 @@ export default function DocsLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="">
-			<div className="">
+		<section>
+			<div>
 				{children}
 			</div>
 		</section>
