@@ -13,21 +13,20 @@ export default function Home () {
     }
   })
   const classColor = {
-    "deathknight" : "bg-red-400",
-    "druid" : "bg-red-400",
-    "hunter" : "bg-green-400",
-    "mage" : "bg-blue-400",
-    "paladin" : "bg-pink-400",
-    "priest" : "bg-gray-500",
-    "rogue" : "bg-yellow-400",
-    "shaman" : "bg-blue-800",
-    "warlock" : "bg-purple-400",
-    "warrior" : "bg-amber-950"
+    deathknight: 'bg-red-400',
+    druid: 'bg-red-400',
+    hunter: 'bg-green-400',
+    mage: 'bg-blue-400',
+    paladin: 'bg-pink-400',
+    priest: 'bg-gray-500',
+    rogue: 'bg-yellow-400',
+    shaman: 'bg-blue-800',
+    warlock: 'bg-purple-400',
+    warrior: 'bg-amber-950'
   }
 
   const sortElements = elements.sort((a, b) => b.events[0].porciento - a.events[0].porciento)
 
-  const h = 'bg-amber-400'
   return (
     <>
       {sortElements.map((item, index) => (

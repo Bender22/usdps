@@ -5,8 +5,8 @@
     "eslint:recommended"
   ],
   "rules": {
-    "no-tabs": "off"
-
-
+    "no-tabs": "off",
+    "space-before-function-paren": "off",
+    "no-mixed-spaces-and-tabs": "off"
   }
 }

@@ -1,13 +1,15 @@
+import React from 'react'
+
 export default function PricingLayout({
-	children,
+  children
 }: {
 	children: React.ReactNode;
 }) {
-	return (
+  return (
 		<section>
 			<div>
 				{children}
 			</div>
 		</section>
-	);
+  )
 }
