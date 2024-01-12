@@ -4,52 +4,52 @@ import { Image } from '@nextui-org/image'
 export const CharactersList = ({ items }) => {
   const { sortElements } = items
   const classColor = {
-    deathknight: 'bg-red-700',
-    druid: 'bg-amber-400',
-    hunter: 'bg-green-400',
-    mage: 'bg-blue-400',
-    paladin: 'bg-pink-400',
-    priest: 'bg-gray-500',
-    rogue: 'bg-yellow-400',
-    shaman: 'bg-blue-800',
-    warlock: 'bg-purple-400',
-    warrior: 'bg-amber-950'
+    deathknight: { bg: 'bg-red-700', text: 'text-red-700' },
+    druid: { bg: 'bg-amber-400', text: 'text-amber-400' },
+    hunter: { bg: 'bg-green-400', text: 'text-green-400' },
+    mage: { bg: 'bg-blue-400', text: 'text-blue-600' },
+    paladin: { bg: 'bg-pink-400', text: 'text-pink-400' },
+    priest: { bg: 'bg-gray-500', text: 'text-gray-500' },
+    rogue: { bg: 'bg-yellow-400', text: 'text-yellow-400' },
+    shaman: { bg: 'bg-blue-800', text: 'text-blue-800' },
+    warlock: { bg: 'bg-purple-400', text: 'text-purple-400' },
+    warrior: { bg: 'bg-amber-950', text: 'text-amber-950' }
   }
   return (
         <>
         { sortElements.map((item, index) => (
-                <div className="gap-2 grid  grid-cols-10" key={item.name + index}>
-                    <Card shadow="sm" className="col-span-3 md:col-span-1 mb-2">
+                <div className="gap-2 grid  grid-cols-12" key={item.name + index}>
+                    <Card shadow="sm" className="col-span-3 md:col-span-1 mb-2 me-2">
                       <CardBody className="overflow-visible p-0 align-bottom">
-                        <Image
+                         <Image
                             shadow="sm"
                             radius="lg"
 
                             alt={item.name}
-                            className="w-fulls object-cover h-full z-0"
-                            src={`/images/${item.c}.jpg`}
-                        />
-                        <div className="absolute bottom-4 left-0 bg-g a z-10 ps-2">
-                          <b className="text-gray-400 inline-block text-xs">{item.class}</b>
-                        </div>
-                        <div className="absolute bottom-0 left-0 bg-g a z-10 ps-2">
-                          <b className="">{item.name}</b>
-                        </div>
-                        <div className="absolute bottom-0 right-0 bg-g a z-10 ps-2">
-                          <b className="">{index + 1}</b>
-                        </div>
+                            className="w-[100px] object-cover h-[65px] z-0 bg-gray-800"
+                            src={`/other/${item.c}.svg`}
+                         />
+                        {/* <div className="absolute bottom-4 left-0 bg-g a z-10 ps-2"> */}
+                        {/*  <b className="text-gray-400 inline-block text-xs">{item.class}</b> */}
+                        {/* </div> */}
+                        {/* <div className={'absolute top-0 left-0 bg-g a z-10 ps-2 text-gray-200'}> */}
+                        {/*  <b className="">{item.class}</b> */}
+                        {/* </div> */}
+                        {/* <div className="absolute bottom-0 left-0 bg-g a z-10 ps-2"> */}
+                        {/*  <b className="text-white text-2xl">{index + 1}</b> */}
+                        {/* </div> */}
                       </CardBody>
                       {/* <CardFooter className="text-small justify-between"> */}
                       {/*    <b>{item.name}</b> */}
                       {/*    <p className="text-default-500">{index + 1}</p> */}
                         {/* </CardFooter> */}
                     </Card>
-                    <Card shadow="sm" isPressable className="col-span-4 md:col-span-9 mb-2">
+                    <Card shadow="sm" isPressable className="col-span-4 md:col-span-11 ms-0 mb-2">
                         <CardBody className="overflow-visible p-0">
-                            <div className={`absolute col-span-6 justify-self-start ${classColor[item.c]} bg-opacity-25 h-full z-10`}
+                            <div className={'absolute col-span-6 justify-self-start bg-gray-800 bg-opacity-30 h-full z-10'}
                                  style={{ width: `${item.v}` }}></div>
                             <div
-                                className="flex grid-cols-12 gap-6 md:gap-4 items-center justify-around">
+                                className={`flex grid-cols-12 gap-6 md:gap-4 ${classColor[item.c].bg} bg-opacity-25 h-full items-center justify-between`}>
                                 {/* <div className="absolute col-span-2 md:col-span-2"> */}
                                 {/*	<Image */}
                                 {/*		shadow="sm" */}
@@ -61,15 +61,16 @@ export const CharactersList = ({ items }) => {
                                 {/*	/> */}
 
                                 {/* </div> */}
-                                 <div className="relative col-span-12 md:col-span-8 justify-center items-center p-5 mt-4">
-                                    <p className="text-2xl md:text-5xl ">{item.events[0].ups}</p>
+                                 <div className="relative col-span-12 md:col-span-8 justify-center items-center ps-4">
+                                    <b className="text-2xl md:text-3xl ">{index + 1}: {item.name}</b>
                                  </div>
-                                 <div className="relative col-span-12 md:col-span-4 justify-end items-center me-4 mt-4">
-                                    <p className="text-2xl md:text-5xl">{item.events[0].porciento}%</p>
-                                 </div>
+                              <div className="relative col-span-12 md:col-span-4 justify-end items-center pe-6">
+                                <b className="text-2xl md:text-3xl">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)}) {item.events[0].porciento}%</b>
+                                {/* <p className="text-2xl md:text-5xl ">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)})</p> */}
+                              </div>
                             </div>
                         </CardBody>
-                        {/* <CardFooter className="text-small justify-end"> */}
+                      {/* <CardFooter className="text-small justify-end"> */}
 
                         {/*	<p className="text-default-500">{item.price}</p> */}
                         {/* </CardFooter> */}

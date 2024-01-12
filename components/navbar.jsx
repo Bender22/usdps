@@ -1,3 +1,4 @@
+'use client'
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -7,6 +8,7 @@ import {
   NavbarItem,
   NavbarMenuItem
 } from '@nextui-org/navbar'
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from '@nextui-org/react'
 import { Button } from '@nextui-org/button'
 import { Kbd } from '@nextui-org/kbd'
 import { Link } from '@nextui-org/link'
@@ -22,9 +24,11 @@ import { ThemeSwitch } from '@/components/theme-switch'
 import {
   GithubIcon,
   HeartFilledIcon,
+  ChevronDown,
   SearchIcon,
   Logo
 } from '@/components/icons'
+import { useMemo, useState } from 'react'
 
 export const Navbar = () => {
   const searchInput = (
@@ -48,6 +52,12 @@ export const Navbar = () => {
 		/>
   )
 
+  const [selectedKeys, setSelectedKeys] = useState(new Set(['The Beasts of Northrend']))
+
+  const selectedValue = useMemo(
+    () => Array.from(selectedKeys).join(', ').replaceAll('-', ' '),
+    [selectedKeys]
+  )
   return (
 		<NextUINavbar maxWidth="xl" position="sticky">
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -57,22 +67,56 @@ export const Navbar = () => {
 						<p className="font-bold text-inherit">US Stadistic</p>
 					</NextLink>
 				</NavbarBrand>
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
-					{siteConfig.navItems.map((item) => (
-						<NavbarItem key={item.href}>
+				 {/* <ul className="hidden lg:flex gap-4 justify-start ml-2"> */}
+					{/* {siteConfig.navItems.map((item) => ( */}
+						<NavbarItem key={siteConfig.navItems[0].href}>
 							<NextLink
 								className={clsx(
 								  linkStyles({ color: 'foreground' }),
 								  'data-[active=true]:text-primary data-[active=true]:font-medium'
 								)}
 								color="foreground"
-								href={item.href}
+								href={siteConfig.navItems[0].href}
 							>
-								{item.label}
+								{siteConfig.navItems[0].label}
 							</NextLink>
 						</NavbarItem>
-					))}
-				</ul>
+					{/* ))} */}
+				 {/* </ul> */}
+				<Dropdown>
+					<DropdownTrigger>
+						{/* <Button */}
+						{/*	variant="bordered" */}
+						{/*	className="capitalize" */}
+						{/* > */}
+						{/*	*/}
+						{/* </Button> */}
+						<Button
+							disableRipple
+							className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+							endContent={<ChevronDown fill="currentColor" size={16} />}
+							radius="sm"
+							variant="light"
+						>
+							Trial of the Crusader
+						</Button>
+					</DropdownTrigger>
+					<DropdownMenu
+						aria-label={'boses'}
+						variant="flat"
+						disallowEmptySelection
+						selectionMode="single"
+						selectedKeys={selectedKeys}
+						onSelectionChange={setSelectedKeys}
+						onSelect={setSelectedKeys}
+					>
+						<DropdownItem key="The-Beasts-of-Northrend" href={'/docs/The-Beasts-of-Northrend'}>The Beasts of Northrend</DropdownItem>
+						<DropdownItem key="Lord-Jaraxxus" href={'/docs/Lord-Jaraxxus'}>Lord Jaraxxus</DropdownItem>
+						<DropdownItem key="Faction-Champions" href={'/docs/Faction-Champions'}>Faction Champions</DropdownItem>
+						<DropdownItem key="Twin-Val'kyr" href={'/docs/Twin-Val\'kyr'}>Twin Val&apos;kyr</DropdownItem>
+						<DropdownItem key="Anub'arak" href={'/docs/Anub\'arak'}>Anuba&apos;arak</DropdownItem>
+					</DropdownMenu>
+				</Dropdown>
 			</NavbarContent>
 
 			<NavbarContent
