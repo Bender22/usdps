@@ -18,8 +18,8 @@ export const CharactersList = ({ items }) => {
   return (
         <>
         { sortElements.map((item, index) => (
-                <div className="gap-2 grid  grid-cols-12" key={item.name + index}>
-                    <Card shadow="sm" className="col-span-3 md:col-span-1 mb-2 me-2">
+                <div className="gap-2 grid grid-cols-12" key={item.name + index}>
+                    <Card shadow="sm" className="col-span-3 md:col-span-2 lg:col-span-1 mb-2 me-2 md:me-4">
                       <CardBody className="overflow-visible p-0 align-bottom">
                          <Image
                             shadow="sm"
@@ -44,7 +44,7 @@ export const CharactersList = ({ items }) => {
                       {/*    <p className="text-default-500">{index + 1}</p> */}
                         {/* </CardFooter> */}
                     </Card>
-                    <Card shadow="sm" isPressable className="col-span-4 md:col-span-11 ms-0 mb-2">
+                    <Card shadow="sm" isPressable className="col-span-9 md:col-span-10 lg:col-span-11 ms-0 mb-2">
                         <CardBody className="overflow-visible p-0">
                             <div className={'absolute col-span-6 justify-self-start bg-gray-800 bg-opacity-40 h-full z-10 rounded-r-2xl'}
                                  style={{ width: `${item.v}` }}></div>
@@ -61,11 +61,11 @@ export const CharactersList = ({ items }) => {
                                 {/*	/> */}
 
                                 {/* </div> */}
-                                 <div className="relative col-span-12 md:col-span-8 justify-center items-center ps-4">
-                                    <b className="text-2xl md:text-3xl ">{index + 1}: {item.name}</b>
+                                 <div className="relative col-span-12 md:col-span-8 justify-center items-center ps-2 md:ps-4">
+                                    <b className="text-xs md:text-3xl ">{index + 1}: {item.name}</b>
                                  </div>
-                              <div className="relative col-span-12 md:col-span-4 justify-end items-center pe-6">
-                                <b className="text-2xl md:text-3xl">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)}) {item.events[0].porciento}%</b>
+                              <div className="relative col-span-12 md:col-span-4 justify-end items-center pe-2 md:pe-6">
+                                <b className="text-xs md:text-3xl">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)}) {item.events[0].porciento}%</b>
                                 {/* <p className="text-2xl md:text-5xl ">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)})</p> */}
                               </div>
                             </div>
