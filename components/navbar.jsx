@@ -105,10 +105,8 @@ export const Navbar = () => {
 						aria-label={'boses'}
 						variant="flat"
 						disallowEmptySelection
-						selectionMode="single"
-						selectedKeys={selectedKeys}
-						onSelectionChange={setSelectedKeys}
-						onSelect={setSelectedKeys}
+						selectionMode="none"
+
 					>
 						<DropdownItem key="The-Beasts-of-Northrend" href={'/docs/The-Beasts-of-Northrend'}>The Beasts of Northrend</DropdownItem>
 						<DropdownItem key="Lord-Jaraxxus" href={'/docs/Lord-Jaraxxus'}>Lord Jaraxxus</DropdownItem>
