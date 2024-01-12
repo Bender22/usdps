@@ -12,7 +12,7 @@ export default function Home () {
 
     }
   })
-
+  const bossName = 'The Beasts of Northrend'
   const elementsHealing = data[0].boses[0].healling.map((e) => {
     return {
       ...e,
@@ -27,15 +27,16 @@ export default function Home () {
 
   return (
       <>
-        <div className="pt-0">
+          <b>{bossName}</b>
+          <div className="pt-0">
 
               <Tabs size='md' aria-label="Tabs sizes" className="mt-0 pt-0">
-                    <Tab key="damage" title="Damage"><CharactersList items={{ sortElements: sortElementsDamage }}/></Tab>
-                    <Tab key="healing" title="Healing"><CharactersList items={{ sortElements: sortElementsHealing }}/></Tab>
+                  <Tab key="damage" title="Damage"><CharactersList items={{ sortElements: sortElementsDamage }}/></Tab>
+                  <Tab key="healing" title="Healing"><CharactersList items={{ sortElements: sortElementsHealing }}/></Tab>
 
               </Tabs>
 
-        </div>
+          </div>
 
       </>
   )

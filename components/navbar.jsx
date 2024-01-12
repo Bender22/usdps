@@ -108,11 +108,11 @@ export const Navbar = () => {
 						selectionMode="none"
 
 					>
-						<DropdownItem key="The-Beasts-of-Northrend" href={'/docs/The-Beasts-of-Northrend'}>The Beasts of Northrend</DropdownItem>
-						<DropdownItem key="Lord-Jaraxxus" href={'/docs/Lord-Jaraxxus'}>Lord Jaraxxus</DropdownItem>
-						<DropdownItem key="Faction-Champions" href={'/docs/Faction-Champions'}>Faction Champions</DropdownItem>
-						<DropdownItem key="Twin-Val'kyr" href={'/docs/Twin-Val\'kyr'}>Twin Val&apos;kyr</DropdownItem>
-						<DropdownItem key="Anub'arak" href={'/docs/Anub\'arak'}>Anuba&apos;arak</DropdownItem>
+						<DropdownItem key="The-Beasts-of-Northrend" href={'/boss/The-Beasts-of-Northrend'}>The Beasts of Northrend</DropdownItem>
+						<DropdownItem key="Lord-Jaraxxus" href={'/boss/Lord-Jaraxxus'}>Lord Jaraxxus</DropdownItem>
+						<DropdownItem key="Faction-Champions" href={'/boss/Faction-Champions'}>Faction Champions</DropdownItem>
+						<DropdownItem key="Twin-Val'kyr" href={'/boss/Twin-Val\'kyr'}>Twin Val&apos;kyr</DropdownItem>
+						<DropdownItem key="Anub'arak" href={'/boss/Anub\'arak'}>Anuba&apos;arak</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>
 			</NavbarContent>

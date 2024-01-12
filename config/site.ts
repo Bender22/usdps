@@ -15,7 +15,7 @@ export const siteConfig = {
     },
     {
       label: 'Healing',
-      href: '/docs'
+      href: '/boss'
     },
     {
 		  label: 'Blog',
