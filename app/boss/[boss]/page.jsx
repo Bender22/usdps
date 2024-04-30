@@ -8,7 +8,7 @@ export default function BossPage ({ params }) {
   const [data, setData] = useState([])
   const url = 'https://undeadsheep-backend.netlify.app/api/event'
   useEffect(() => {
-    const fetchData = async () => {
+    // const fetchData = async () => {
       fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -31,7 +31,8 @@ export default function BossPage ({ params }) {
       // } catch (err) {
       //   console.log(err)
       // }
-    }
+    // }
+    // fetchData()
   }, [])
 
   const bossNumber = {
