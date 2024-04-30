@@ -19,7 +19,7 @@ export const CharactersList = ({ items }) => {
         <>
         { sortElements.map((item, index) => (
                 <div className="gap-2 grid grid-cols-12" key={item.name + index}>
-                    <Card shadow="sm" className="col-span-2 md:col-span-2 lg:col-span-2 mb-2 me-2 md:me-4">
+                    <Card shadow="sm" className="col-span-3 md:col-span-1 lg:col-span-1 mb-2 me-2 md:me-4">
                       <CardBody className="overflow-visible p-0 align-bottom">
                          <Image
                             shadow="sm"
