@@ -17,20 +17,20 @@ export default function BossPage ({ params }) {
       })
       .catch(error => console.error('Error al obtener los datos:', error))
 
-      // try {
-      //   const response = await axios({
-      //     method: 'GET',
-      //     url: url, // Your API endpoint
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       'Access-Control-Allow-Methods': 'GET', // Set allowed HTTP method
-      //     },
-      //   });
-      //   console.log(response)
-      //   setData(response.data[7].players);
-      // } catch (err) {
-      //   console.log(err)
-      // }
+    // try {
+    //   const response = await axios({
+    //     method: 'GET',
+    //     url: url, // Your API endpoint
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Access-Control-Allow-Methods': 'GET', // Set allowed HTTP method
+    //     },
+    //   });
+    //   console.log(response)
+    //   setData(response.data[7].players);
+    // } catch (err) {
+    //   console.log(err)
+    // }
     // }
     // fetchData()
   }, [])
