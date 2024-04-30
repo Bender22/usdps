@@ -61,15 +61,15 @@ export default function BossPage ({ params }) {
   const bossName = boss.replaceAll('-', ' ')
   console.log(boss)
   console.log(bossNumberICC[boss])
-  console.log(data[0])
+  console.log(data[bossNumberICC[boss]])
 
-  // const elements = data[bossNumberICC[boss]].players.map((e) => {
-  //   return {
-  //     ...e,
-  //     c: e.clase.toLocaleLowerCase()
-  //
-  //   }
-  // })
+  const elements = data[bossNumberICC[boss]].players.map((e) => {
+    return {
+      ...e,
+      c: e.clase.toLocaleLowerCase()
+
+    }
+  })
   //
   // const elementsHealing = data[bossNumberICC[boss]].players.map((e) => {
   //   return {
@@ -79,10 +79,10 @@ export default function BossPage ({ params }) {
   //   }
   // })
 
-  // const sortElementsDamage = elements.sort((a, b) => b.damage_done - a.damage_done)
-  //   .filter(e => e.damage_done > e.healing_done)
-  // const sortElementsHealing = elements.sort((a, b) => b.damage_done - a.damage_done)
-  //   .filter(e => e.healing_done > e.damage_done)
+  const sortElementsDamage = elements.sort((a, b) => b.damage_done - a.damage_done)
+    .filter(e => e.damage_done > e.healing_done)
+  const sortElementsHealing = elements.sort((a, b) => b.damage_done - a.damage_done)
+    .filter(e => e.healing_done > e.damage_done)
 
   return (
       <>
@@ -90,8 +90,8 @@ export default function BossPage ({ params }) {
         <div className="pt-0">
 
           <Tabs size='md' aria-label="Tabs sizes" className="mt-0 pt-0">
-            {/* <Tab key="damage" title="Damage"><CharactersList items={{ sortElements: sortElementsDamage }}/></Tab> */}
-            {/* <Tab key="healing" title="Healing"><CharactersList items={{ sortElements: sortElementsHealing }}/></Tab> */}
+             <Tab key="damage" title="Damage"><CharactersList items={{ sortElements: sortElementsDamage }}/></Tab>
+             <Tab key="healing" title="Healing"><CharactersList items={{ sortElements: sortElementsHealing }}/></Tab>
 
           </Tabs>
 
