@@ -13,7 +13,7 @@ export default function BossPage ({ params }) {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        setData(data[7].players)
+        setData(data[7])
       })
       .catch(error => console.error('Error al obtener los datos:', error))
 
@@ -35,16 +35,31 @@ export default function BossPage ({ params }) {
     // fetchData()
   }, [])
 
-  const bossNumber = {
+  const bossNumberTOC = {
     'The-Beasts-of-Northrend': 0,
     'Lord-Jaraxxus': 1,
     'Faction-Champions': 2,
     "Twin-Val'kyr": 3,
     "Anub'arak": 4
   }
+
+  const bossNumberICC = {
+    'Lord-Marrowgar': 0,
+    'Lady-Deathwhisper': 1,
+    'Gunship-Battle': 2,
+    'Deathbringer-Saurfang': 3,
+    Festergut: 4,
+    Rotface: 5,
+    'Professor-Putricide': 6,
+    'Blood-Prince-Council': 7,
+    "Blood-Queen-Lana'thel": 8,
+    'Valithria-Dreamwalker': 9,
+    Sindragosa: 10,
+    'The-Lich-King': 11
+  }
   const { boss } = params
   const bossName = boss.replaceAll('-', ' ')
-  const elementsDamage = data.map((e) => {
+  const elementsDamage = data[bossNumberICC[boss]].map((e) => {
     return {
       ...e,
       c: e.clase.toLocaleLowerCase()
@@ -52,7 +67,7 @@ export default function BossPage ({ params }) {
     }
   })
 
-  const elementsHealing = data.map((e) => {
+  const elementsHealing = data[bossNumberICC[boss]].map((e) => {
     return {
       ...e,
       c: e.clase.toLocaleLowerCase()

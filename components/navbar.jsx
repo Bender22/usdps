@@ -69,20 +69,52 @@ export const Navbar = () => {
 				</NavbarBrand>
 				 {/* <ul className="hidden lg:flex gap-4 justify-start ml-2"> */}
 					{/* {siteConfig.navItems.map((item) => ( */}
-						<NavbarItem key={siteConfig.navItems[0].href}>
-							<NextLink
-								className={clsx(
-								  linkStyles({ color: 'foreground' }),
-								  'data-[active=true]:text-primary data-[active=true]:font-medium'
-								)}
-								color="foreground"
-								href={siteConfig.navItems[0].href}
-							>
-								{siteConfig.navItems[0].label}
-							</NextLink>
-						</NavbarItem>
+					{/*	<NavbarItem key={siteConfig.navItems[0].href}> */}
+					{/*		<NextLink */}
+					{/*			className={clsx( */}
+					{/*			  linkStyles({ color: 'foreground' }), */}
+					{/*			  'data-[active=true]:text-primary data-[active=true]:font-medium' */}
+					{/*			)} */}
+					{/*			color="foreground" */}
+					{/*			href={siteConfig.navItems[0].href} */}
+					{/*		> */}
+					{/*			{siteConfig.navItems[0].label} */}
+					{/*		</NextLink> */}
+					{/*	</NavbarItem> */}
 					{/* ))} */}
 				 {/* </ul> */}
+				{/* <Dropdown> */}
+				{/*	<DropdownTrigger> */}
+				{/*		/!* <Button *!/ */}
+				{/*		/!*	variant="bordered" *!/ */}
+				{/*		/!*	className="capitalize" *!/ */}
+				{/*		/!* > *!/ */}
+				{/*		/!*	*!/ */}
+				{/*		/!* </Button> *!/ */}
+				{/*		<Button */}
+				{/*			disableRipple */}
+				{/*			className="p-0 bg-transparent data-[hover=true]:bg-transparent" */}
+				{/*			endContent={<ChevronDown fill="currentColor" size={16} />} */}
+				{/*			radius="sm" */}
+				{/*			variant="light" */}
+				{/*		> */}
+				{/*			Trial of the Crusader */}
+				{/*		</Button> */}
+				{/*	</DropdownTrigger> */}
+				{/*	<DropdownMenu */}
+				{/*		aria-label={'boses'} */}
+				{/*		variant="flat" */}
+				{/*		disallowEmptySelection */}
+				{/*		selectionMode="none" */}
+
+				{/*	> */}
+				{/*		<DropdownItem key="The-Beasts-of-Northrend" href={'/boss/The-Beasts-of-Northrend'}>The Beasts of Northrend</DropdownItem> */}
+				{/*		<DropdownItem key="Lord-Jaraxxus" href={'/boss/Lord-Jaraxxus'}>Lord Jaraxxus</DropdownItem> */}
+				{/*		<DropdownItem key="Faction-Champions" href={'/boss/Faction-Champions'}>Faction Champions</DropdownItem> */}
+				{/*		<DropdownItem key="Twin-Val'kyr" href={'/boss/Twin-Val\'kyr'}>Twin Val&apos;kyr</DropdownItem> */}
+				{/*		<DropdownItem key="Anub'arak" href={'/boss/Anub\'arak'}>Anuba&apos;arak</DropdownItem> */}
+				{/*	</DropdownMenu> */}
+				{/* </Dropdown> */}
 				<Dropdown>
 					<DropdownTrigger>
 						{/* <Button */}
@@ -98,7 +130,7 @@ export const Navbar = () => {
 							radius="sm"
 							variant="light"
 						>
-							Trial of the Crusader
+							Icecrown Citadel
 						</Button>
 					</DropdownTrigger>
 					<DropdownMenu
@@ -106,13 +138,19 @@ export const Navbar = () => {
 						variant="flat"
 						disallowEmptySelection
 						selectionMode="none"
-
 					>
-						<DropdownItem key="The-Beasts-of-Northrend" href={'/boss/The-Beasts-of-Northrend'}>The Beasts of Northrend</DropdownItem>
-						<DropdownItem key="Lord-Jaraxxus" href={'/boss/Lord-Jaraxxus'}>Lord Jaraxxus</DropdownItem>
-						<DropdownItem key="Faction-Champions" href={'/boss/Faction-Champions'}>Faction Champions</DropdownItem>
-						<DropdownItem key="Twin-Val'kyr" href={'/boss/Twin-Val\'kyr'}>Twin Val&apos;kyr</DropdownItem>
-						<DropdownItem key="Anub'arak" href={'/boss/Anub\'arak'}>Anuba&apos;arak</DropdownItem>
+						<DropdownItem key="Lord-Marrowgar" href={'/boss/Lord-Marrowgar'}>Lord Marrowgar</DropdownItem>
+						<DropdownItem key="Lady-Deathwhisper" href={'/boss/Lady-Deathwhisper'}>Lady Deathwhisper</DropdownItem>
+						<DropdownItem key="Gunship-Battle" href={'/boss/Gunship-Battle'}>Gunship Battle</DropdownItem>
+						<DropdownItem key="Deathbringer-Saurfang" href={'/boss/Deathbringer-Saurfang'}>Deathbringer Saurfang</DropdownItem>
+						<DropdownItem key="Festergut" href={'/boss/Festergut'}>Festergut</DropdownItem>
+						<DropdownItem key="Rotface" href={'/boss/Rotface'}>Rotface</DropdownItem>
+						<DropdownItem key="Professor-Putricide" href={'/boss/Professor-Putricide'}>Professor Putricide</DropdownItem>
+						<DropdownItem key="Blood-Prince-Council" href={'/boss/Blood-Prince-Council'}>Blood Prince Council</DropdownItem>
+						<DropdownItem key="Blood-Queen-Lana'thel" href={'/boss/Blood-Queen-Lana\'thel'}>Blood-Queen Lana&apos;thel</DropdownItem>
+						<DropdownItem key="Valithria-Dreamwalker" href={'/boss/Valithria-Dreamwalker'}>Valithria Dreamwalker</DropdownItem>
+						<DropdownItem key="Sindragosa" href={'/boss/Sindragosa'}>Sindragosa</DropdownItem>
+						<DropdownItem key="The-Lich-King" href={'/boss/The-Lich-King'}>The Lich King</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>
 			</NavbarContent>
