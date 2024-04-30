@@ -13,7 +13,7 @@ export default function BossPage ({ params }) {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        setData(data[7])
+        setData(data)
       })
       .catch(error => console.error('Error al obtener los datos:', error))
 
