@@ -1,7 +1,7 @@
 'use client'
 import { Tabs, Tab } from '@nextui-org/tabs'
 import { CharactersList } from '../../../components/characters-list'
-import { useMemo, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from "axios";
 
 export default function BossPage ({ params }) {
@@ -9,27 +9,27 @@ export default function BossPage ({ params }) {
   const [data, setData] = useState([]);
   const url = 'https://undeadsheep-backend.netlify.app/api/event'
   useEffect(async () => {
-    // fetch(url)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       setData(data[7].players);
-    //     })
-    //     .catch(error => console.error('Error al obtener los datos:', error));
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          setData(data[7].players);
+        })
+        .catch(error => console.error('Error al obtener los datos:', error));
 
-    try {
-      const response = await axios({
-        method: 'GET',
-        url: url, // Your API endpoint
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Methods': 'GET', // Set allowed HTTP method
-        },
-      });
-      console.log(response)
-      data.value = response.data[7].players;
-    } catch (err) {
-      console.log(err)
-    }
+    // try {
+    //   const response = await axios({
+    //     method: 'GET',
+    //     url: url, // Your API endpoint
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Access-Control-Allow-Methods': 'GET', // Set allowed HTTP method
+    //     },
+    //   });
+    //   console.log(response)
+    //   setData(response.data[7].players);
+    // } catch (err) {
+    //   console.log(err)
+    // }
   }, []);
 
   const bossNumber = {
