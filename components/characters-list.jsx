@@ -49,7 +49,7 @@ export const CharactersList = ({ items }) => {
                             <div className={'absolute col-span-6 justify-self-start bg-gray-800 bg-opacity-40 h-full z-10 rounded-r-2xl'}
                                  style={{ width: `${item.v}` }}></div>
                             <div
-                                className={`flex grid-cols-12 gap-6 md:gap-4 ${classColor[item.c].bg} bg-opacity-25 h-full items-center justify-between`}>
+                                className={`flex grid-cols-12 gap-6 md:gap-4 ${classColor[item.c].bg ?? 'bg-gray-500'} bg-opacity-25 h-full items-center justify-between`}>
                                 {/* <div className="absolute col-span-2 md:col-span-2"> */}
                                 {/*	<Image */}
                                 {/*		shadow="sm" */}
