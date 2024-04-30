@@ -59,7 +59,7 @@ export default function BossPage ({ params }) {
   }
   const { boss } = params
   const bossName = boss.replaceAll('-', ' ')
-  const elementsDamage = data[bossNumberICC[boss]].map((e) => {
+  const elementsDamage = data[bossNumberICC[boss]].players.map((e) => {
     return {
       ...e,
       c: e.clase.toLocaleLowerCase()
@@ -67,7 +67,7 @@ export default function BossPage ({ params }) {
     }
   })
 
-  const elementsHealing = data[bossNumberICC[boss]].map((e) => {
+  const elementsHealing = data[bossNumberICC[boss]].players.map((e) => {
     return {
       ...e,
       c: e.clase.toLocaleLowerCase()
