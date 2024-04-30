@@ -9,7 +9,7 @@ export const CharactersList = ({ items }) => {
     hunter: { bg: 'bg-green-400', text: 'text-green-400' },
     mage: { bg: 'bg-blue-400', text: 'text-blue-600' },
     paladin: { bg: 'bg-pink-400', text: 'text-pink-400' },
-    priest: { bg: 'bg-gray-500', text: 'text-gray-500' },
+    priest: { bg: 'bg-gray-200', text: 'text-gray-500' },
     rogue: { bg: 'bg-yellow-400', text: 'text-yellow-400' },
     shaman: { bg: 'bg-blue-800', text: 'text-blue-800' },
     warlock: { bg: 'bg-purple-400', text: 'text-purple-400' },
