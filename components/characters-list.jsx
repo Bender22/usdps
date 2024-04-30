@@ -27,7 +27,7 @@ export const CharactersList = ({ items }) => {
 
                             alt={item.name}
                             className="w-[100px] object-cover h-[65px] z-0 bg-gray-800"
-                            src={`/other/${item.c}.svg`}
+                            src={`/other/${item.clase}.svg`}
                          />
                         {/* <div className="absolute bottom-4 left-0 bg-g a z-10 ps-2"> */}
                         {/*  <b className="text-gray-400 inline-block text-xs">{item.class}</b> */}
@@ -49,7 +49,7 @@ export const CharactersList = ({ items }) => {
                             <div className={'absolute col-span-6 justify-self-start bg-gray-800 bg-opacity-40 h-full z-10 rounded-r-2xl'}
                                  style={{ width: `${item.v}` }}></div>
                             <div
-                                className={`flex grid-cols-12 gap-6 md:gap-4 ${classColor[item.c].bg} bg-opacity-25 h-full items-center justify-between`}>
+                                className={`flex grid-cols-12 gap-6 md:gap-4 ${classColor[item.clase].bg} bg-opacity-25 h-full items-center justify-between`}>
                                 {/* <div className="absolute col-span-2 md:col-span-2"> */}
                                 {/*	<Image */}
                                 {/*		shadow="sm" */}
@@ -65,7 +65,7 @@ export const CharactersList = ({ items }) => {
                                     <b className="text-xs md:text-3xl ">{index + 1}: {item.name}</b>
                                  </div>
                               <div className="relative col-span-12 md:col-span-4 justify-end items-center pe-2 md:pe-6">
-                                <b className="text-xs md:text-3xl">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)}) {item.events[0].porciento}%</b>
+                                {/* <b className="text-xs md:text-3xl">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)}) {item.events[0].porciento}%</b> */}
                                 {/* <p className="text-2xl md:text-5xl ">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)})</p> */}
                               </div>
                             </div>

@@ -47,7 +47,6 @@ export default function BossPage ({ params }) {
   const elementsDamage = data.map((e) => {
     return {
       ...e,
-
       c: e.clase.toLocaleLowerCase()
 
     }
@@ -56,8 +55,7 @@ export default function BossPage ({ params }) {
   const elementsHealing = data.map((e) => {
     return {
       ...e,
-
-      c: e.class.toLocaleLowerCase()
+      c: e.clase.toLocaleLowerCase()
 
     }
   })
