@@ -61,7 +61,7 @@ export default function BossPage ({ params }) {
   const bossName = boss.replaceAll('-', ' ')
   console.log(boss)
   console.log(bossNumberICC[boss])
-  console.log(data[bossNumberICC[boss]])
+  console.log(data[0])
 
   // const elements = data[bossNumberICC[boss]].players.map((e) => {
   //   return {
