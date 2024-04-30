@@ -66,7 +66,7 @@ export const CharactersList = ({ items }) => {
                                  </div>
                               <div className="relative col-span-12 md:col-span-4 justify-end items-center pe-2 md:pe-6">
                                  <b className="text-xs md:text-3xl">
-                                   {(item.damage_done > item.healing_done ? item.damage_done : item.healing_done).toFixed(0) }({((item.healing_done) / item.active_time).toFixed(2)})</b>
+                                   {(item.damage_done > item.healing_done ? item.damage_done : item.healing_done).toFixed(0) }({((item.damage_done > item.healing_done ? item.damage_done : item.healing_done) / item.active_time).toFixed(2)})</b>
                                 {/* <p className="text-2xl md:text-5xl ">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)})</p> */}
                               </div>
                             </div>
