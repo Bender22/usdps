@@ -65,7 +65,7 @@ export const CharactersList = ({ items }) => {
                                     <b className="text-xs md:text-3xl ">{index + 1}: {item.name}</b>
                                  </div>
                               <div className="relative col-span-12 md:col-span-4 justify-end items-center pe-2 md:pe-6">
-                                {/* <b className="text-xs md:text-3xl">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)}) {item.events[0].porciento}%</b> */}
+                                 <b className="text-xs md:text-3xl">{item.damage_done.toFixed(2) }({(item.damage_done / item.active_time).toFixed(2)})</b>
                                 {/* <p className="text-2xl md:text-5xl ">{item.events[0].u_medida}({(item.events[0].ups / 1000).toFixed(2)})</p> */}
                               </div>
                             </div>
