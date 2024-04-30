@@ -60,8 +60,8 @@ export default function BossPage ({ params }) {
     }
   })
 
-  const sortElementsDamage = elementsDamage.sort((a, b) => b.events[0].ups - a.events[0].ups)
-  const sortElementsHealing = elementsHealing.sort((a, b) => b.events[0].ups - a.events[0].ups)
+  const sortElementsDamage = elementsDamage.sort((a, b) => b.damage_done - a.damage_done)
+  const sortElementsHealing = elementsHealing.sort((a, b) => b.damage_done - a.damage_done)
 
   return (
       <>
