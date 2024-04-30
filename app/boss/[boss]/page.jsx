@@ -18,7 +18,7 @@ export default function BossPage ({ params }) {
 
     try {
       const response = await axios({
-
+        method: 'GET',
         url: url, // Your API endpoint
         headers: {
           'Content-Type': 'application/json',
@@ -31,23 +31,7 @@ export default function BossPage ({ params }) {
       console.log(err)
     }
   }, []);
-  const fetchData = async () => {
 
-    try {
-      const response = await axios({
-
-        url: url, // Your API endpoint
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Methods': 'GET', // Set allowed HTTP method
-        },
-      });
-      console.log(response)
-      data.value = response.data[7].players;
-    } catch (err) {
-      console.log(err)
-    }
-  }
   const bossNumber = {
     'The-Beasts-of-Northrend': 0,
     'Lord-Jaraxxus': 1,
@@ -57,19 +41,19 @@ export default function BossPage ({ params }) {
   }
   const { boss } = params
   const bossName = boss.replaceAll('-', ' ')
-  const elementsDamage = data[0].boses[bossNumber[boss]].damage.map((e) => {
+  const elementsDamage = data.map((e) => {
     return {
       ...e,
-      v: (e.events[0].porciento) + '%',
-      c: e.class.toLocaleLowerCase()
+
+      c: e.clase.toLocaleLowerCase()
 
     }
   })
 
-  const elementsHealing = data[0].boses[bossNumber[boss]].healling.map((e) => {
+  const elementsHealing = data.map((e) => {
     return {
       ...e,
-      v: (e.events[0].porciento) + '%',
+
       c: e.class.toLocaleLowerCase()
 
     }
