@@ -28,7 +28,7 @@ export default function BossPage ({ params }) {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        setData(data[bossNumber])
+        setData(data[bossNumber].players)
       })
       .catch(error => console.error('Error al obtener los datos:', error))
 
@@ -48,7 +48,7 @@ export default function BossPage ({ params }) {
     // }
     // }
     // fetchData()
-  }, [])
+  }, [bossNumber])
 
   const bossNumberTOC = {
     'The-Beasts-of-Northrend': 0,
