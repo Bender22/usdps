@@ -12,6 +12,7 @@ export default function BossPage ({ params }) {
       fetch(url)
         .then(response => response.json())
         .then(data => {
+          console.log(data)
           setData(data[7].players)
         })
         .catch(error => console.error('Error al obtener los datos:', error))
