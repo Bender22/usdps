@@ -59,25 +59,26 @@ export default function BossPage ({ params }) {
   }
   const { boss } = params
   const bossName = boss.replaceAll('-', ' ')
-  const elementsDamage = data[bossNumberICC[boss]].players.map((e) => {
-    return {
-      ...e,
-      c: e.clase.toLocaleLowerCase()
+  console.log(boss)
+  // const elements = data[bossNumberICC[boss]].players.map((e) => {
+  //   return {
+  //     ...e,
+  //     c: e.clase.toLocaleLowerCase()
+  //
+  //   }
+  // })
+  //
+  // const elementsHealing = data[bossNumberICC[boss]].players.map((e) => {
+  //   return {
+  //     ...e,
+  //     c: e.clase.toLocaleLowerCase()
+  //
+  //   }
+  // })
 
-    }
-  })
-
-  const elementsHealing = data[bossNumberICC[boss]].players.map((e) => {
-    return {
-      ...e,
-      c: e.clase.toLocaleLowerCase()
-
-    }
-  })
-
-  const sortElementsDamage = elementsDamage.sort((a, b) => b.damage_done - a.damage_done)
+  const sortElementsDamage = elements.sort((a, b) => b.damage_done - a.damage_done)
     .filter(e => e.damage_done > e.healing_done)
-  const sortElementsHealing = elementsHealing.sort((a, b) => b.damage_done - a.damage_done)
+  const sortElementsHealing = elements.sort((a, b) => b.damage_done - a.damage_done)
     .filter(e => e.healing_done > e.damage_done)
 
   return (
